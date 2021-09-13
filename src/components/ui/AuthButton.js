@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { useApolloClient, useQuery } from '@apollo/client';
 import { useAuth } from '8base-react-sdk';
 
+import Button from 'react-bootstrap/Button';
 
 import { CURRENT_USER_QUERY } from 'shared/graphql';
 
@@ -25,11 +26,11 @@ export const AuthButton = () => {
 
   if (isAuthorized) {
     return(
-      <button onClick={onLogoutClick}>Sign In</button>
+      <Button variant="warning" onClick={onLogoutClick}>Sign Out</Button>
     )
   }
 
   return(
-    <button onClick={onLoginClick}>Sign In</button>
+    <Button variant="info" onClick={onLoginClick}>Sign In</Button>
   )
 };

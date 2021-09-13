@@ -4,7 +4,7 @@ import { gql } from '@apollo/client';
  * Query the current users details.
  */
 export const CURRENT_USER_QUERY = gql`
-  query CurrentUser {
+  query {
     user {
       id
       email
@@ -13,10 +13,24 @@ export const CURRENT_USER_QUERY = gql`
     }
   }
 `;
-
 /* 
-  Query the current table
+Query the current table
 */
+export const NOTES_LIST_QUERY = gql`
+  query { 
+  notesList {
+      items {
+        id
+        title
+        body
+        users {
+          email
+        }
+        completed
+      }
+    }
+  }
+`;
 
 /**
  * Sign up a new user mutation.

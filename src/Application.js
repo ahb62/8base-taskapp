@@ -6,13 +6,14 @@ import { WORKSPACE_ENDPOINT } from "./shared/constants";
 import { authClient } from "./shared/auth/index";
 import { Routes } from "./routes";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export const Application = () => {
   const onRequestSuccess = useCallback(({ operation }) => {
     const message = operation.getContext();
     if (message) 
     {
-      console.log(message);
-      console.log("Request Success");
+      console.log(`your message of the request auth is:${message}`);
     }
   }, []);
 
@@ -23,8 +24,7 @@ export const Application = () => {
     if (hasGraphQLErrors) {
       graphQLErrors.forEach((error) => {
         // eslint-disable-next-line no-console
-        console.error(error.message);
-        console.log("Request Failed");
+        console.error(`your error of the request auth is: ${error.message}`);
       });
     }
   }, []);
