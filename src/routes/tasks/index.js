@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Table from 'react-bootstrap/Table';
+import {ButtonsCrud} from './ButtonsCrud';
 import {request as handlingRequestFrom8base} from 'graphql-request';
 import {NOTES_LIST_QUERY} from 'shared/graphql';
 import {WORKSPACE_ENDPOINT} from 'shared/constants';
@@ -7,7 +8,6 @@ import {WORKSPACE_ENDPOINT} from 'shared/constants';
 export const Tasks = () =>
 {
     const [state, setState] = useState([]);  
-
     useEffect(() => 
     {
       const data = handlingRequestFrom8base(WORKSPACE_ENDPOINT, NOTES_LIST_QUERY);
@@ -15,14 +15,13 @@ export const Tasks = () =>
         {
           setState(req.notesList.items);
         });
-      }, [])
+      }, [])   
       
       console.log(state);
-
-
   return(
     <>
     <h1 className="text-center">Tasks List</h1>
+    <ButtonsCrud />
     <Table striped bordered hover size="sm">
       <thead>
         <tr>

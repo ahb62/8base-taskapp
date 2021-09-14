@@ -1,8 +1,7 @@
 import { gql } from '@apollo/client';
+/* QUERY HERE */
 
-/**
- * Query the current users details.
- */
+/* Query the current users details. */
 export const CURRENT_USER_QUERY = gql`
   query {
     user {
@@ -11,11 +10,8 @@ export const CURRENT_USER_QUERY = gql`
       lastName
       firstName
     }
-  }
-`;
-/* 
-Query the current table
-*/
+  }`;
+/* Query the current table */
 export const NOTES_LIST_QUERY = gql`
   query { 
   notesList {
@@ -23,18 +19,14 @@ export const NOTES_LIST_QUERY = gql`
         id
         title
         body
-        users {
-          email
-        }
+        users {email}
         completed
       }
     }
-  }
-`;
+  }`;
+/* MUTATIONS HERE */
 
-/**
- * Sign up a new user mutation.
- */
+/* Sign up a new user mutation. */
 export const USER_SIGN_UP_MUTATION = gql`
   mutation UserSignUp($user: UserCreateInput!, $authProfileId: ID) {
     userSignUpWithToken(user: $user, authProfileId: $authProfileId) {
@@ -43,5 +35,14 @@ export const USER_SIGN_UP_MUTATION = gql`
       lastName
       firstName
     }
-  }
-`;
+  }`;
+
+/* export const ADD_NOTE_MUTATION = gql`
+  mutation NoteCreate($data: NoteCreateInput!) {
+    noteCreate(data: $data) {
+      title
+      body
+      users {email}
+      completed
+    }
+  }`; */
