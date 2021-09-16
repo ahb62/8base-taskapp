@@ -37,7 +37,7 @@ export const USER_SIGN_UP_MUTATION = gql`
     }
   }`;
 
-/* export const ADD_NOTE_MUTATION = gql`
+export const ADD_NOTE_MUTATION = gql`
   mutation NoteCreate($data: NoteCreateInput!) {
     noteCreate(data: $data) {
       title
@@ -45,4 +45,4 @@ export const USER_SIGN_UP_MUTATION = gql`
       users {email}
       completed
     }
-  }`; */
+  }`; 

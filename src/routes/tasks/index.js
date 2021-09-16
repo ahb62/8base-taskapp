@@ -16,8 +16,6 @@ export const Tasks = () =>
           setState(req.notesList.items);
         });
       }, [])   
-      
-      console.log(state);
   return(
     <>
     <h1 className="text-center">Tasks List</h1>

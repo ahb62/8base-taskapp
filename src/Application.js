@@ -13,7 +13,8 @@ export const Application = () => {
     const message = operation.getContext();
     if (message) 
     {
-      console.log(`your message of the request auth is:${message}`);
+      console.log(`your message of the request auth is:`);
+      console.log(message);
     }
   }, []);
 
@@ -23,7 +24,6 @@ export const Application = () => {
 
     if (hasGraphQLErrors) {
       graphQLErrors.forEach((error) => {
-        // eslint-disable-next-line no-console
         console.error(`your error of the request auth is: ${error.message}`);
       });
     }

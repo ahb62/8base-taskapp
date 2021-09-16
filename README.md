@@ -69,3 +69,14 @@ This project is totally unstyles, minus a few minor css classes. If you'd like t
 ## Contributing
 
 Feel welcome to fork this project and change it as you need, or submit a pull request with comments and improvements!
+
+## Commit:
+- The *gql* functions that contains the useMutations for create, must be evaluated.
+
+- The ButtonsCrud.js component, must be evaluated, because the modals aren't closed after the actions has done. 
+
+- The ModalCreate.js must be evaluated within the state logic and the *useMutation()* function for posting the task. The values are captured with the handleSubmit() function on onSubmit={}, but the promise and the function useMutation have some errors too. *useMutation()* are a function of *@apollo/client* dependence.
+
+- The ModalUpdate.js is a copy of the ModalCreate.js tag forms with @react-bootstrap/. Only contains tag forms.
+
+- The ModalDetele.js is only a modal with two buttons asking for the confirmation of deleting the task.
